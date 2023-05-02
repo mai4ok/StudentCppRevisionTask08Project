@@ -21,5 +21,10 @@
  */
 
 int task03(int a, int b, int c, int d) {
-	return 0;
+	int min = d;
+	if (a < b && a < c && a < d) min = a;
+	if (b < a && b < c && b < d) min = b;
+	if (c < a && c < b && c < d) min = c;
+
+	return min;
 }

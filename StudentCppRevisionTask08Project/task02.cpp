@@ -33,5 +33,18 @@
  */
 
 string task02(int a, int b, int c, int d) {
-	return "?";
+	string msg = "No arithmetic progression.";
+	if (a > b && b > c && c > d) {
+		msg = "Descending arithmetic progression.";
+	}
+	if (a < b && b < c && c < d) {
+		msg = "Ascending arithmetic progression.";
+	}
+	if (a == b && b == c && c == d) {
+		msg = "Monotonic arithmetic progression.";
+	}
+	if ((a - b != b - c) || (b - c != c - d)) {
+		msg = "No arithmetic progression.";
+	}
+	return msg;
 }
