@@ -46,5 +46,66 @@
 */
 
 string taskX(int a1, int b1, int c1, int a2, int b2, int c2) {
-	return "?";
+	string msg;
+	if (a1 <= 0 || b1 <= 0 || c1 <= 0 || a2 <= 0 || b2 <= 0 || c2 <= 0) {
+		return "Error.";
+	}
+	if (a1 >= b1) {
+		int temp;
+		temp = a1;
+		a1 = b1;
+		b1 = temp;
+	}
+	if (a1 >= c1) {
+		int temp;
+		temp = a1;
+		a1 = c1;
+		c1 = temp;
+	}
+	if (b1 >= c1) {
+		int temp;
+		temp = b1;
+		b1 = c1;
+		c1 = temp;
+	}
+	if (a2 >= b2) {
+		int temp;
+		temp = a2;
+		a2 = b2;
+		b2 = temp;
+	}
+	if (a2 >= c2) {
+		int temp;
+		temp = a2;
+		a2 = c2;
+		c2 = temp;
+	}
+	if (b2 >= c2) {
+		int temp;
+		temp = b2;
+		b2 = c2;
+		c2 = temp;
+	}
+
+	if (a1 <= a2 && b1 <= b2 && c1 <= c2) {
+
+		msg = "The first box is smaller than the second one.";
+
+	}
+	else {
+		msg = "Boxes are incomparable.";
+
+	}
+
+	if (a1 >= a2 && b1 >= b2 && c1 >= c2) {
+
+		msg = "The first box is larger than the second one.";
+
+	}
+
+	if (a1 == a2 && b1 == b2 && c1 == c2) {
+		msg = "Boxes are equal.";
+
+	}
+	return msg;
 }
